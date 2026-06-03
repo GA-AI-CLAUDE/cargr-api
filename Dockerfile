@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY pyproject.toml ./
 
-RUN --mount=type=cache,target=/root/.cache/uv \
+RUN --mount=type=cache,id=s/98bbfc88-80d0-4b90-ada9-489546c187fe-/root/.cache/uv,target=/root/.cache/uv \
     uv venv /app/.venv && \
     uv pip install -r pyproject.toml
 
